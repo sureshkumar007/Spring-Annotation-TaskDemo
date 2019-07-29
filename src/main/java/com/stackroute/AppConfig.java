@@ -11,17 +11,19 @@ public class AppConfig
     @Bean
     public Actor getActor()
     {
-        Actor actor=new Actor();
-        actor.setName("suresh");
-        actor.setGender("Male");
-        actor.setAge(22);
+        Actor actor=new Actor("gopi","male",22);
+        return actor;
+    }
+    @Bean
+    public Actor getActor2()
+    {
+        Actor actor=new Actor("suresh","male",22);
         return actor;
     }
     @Bean
     public Movie getMovie()
     {
-        Movie movie = new Movie();
-        movie.setActor(getActor());
+        Movie movie = new Movie(getActor2());
         return movie;
     }
 }
