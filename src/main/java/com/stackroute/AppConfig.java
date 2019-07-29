@@ -5,6 +5,9 @@ package com.stackroute;
         import org.springframework.context.annotation.Bean;
         import org.springframework.context.annotation.Configuration;
 
+        import java.util.ArrayList;
+        import java.util.List;
+
 @Configuration
 public class AppConfig
 {
@@ -23,7 +26,11 @@ public class AppConfig
     @Bean
     public Movie getMovie()
     {
-        Movie movie = new Movie(getActor2());
+
+        List<Actor> list=new ArrayList<>();
+        list.add(getActor());
+        list.add(getActor2());
+        Movie movie = new Movie(list);
         return movie;
     }
 }

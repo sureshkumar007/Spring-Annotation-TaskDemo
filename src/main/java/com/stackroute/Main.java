@@ -4,6 +4,8 @@ import com.stackroute.domain.Movie;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import java.util.List;
+
 /**
  * Hello world!
  *
@@ -15,6 +17,7 @@ public class Main
 
         ApplicationContext context=new AnnotationConfigApplicationContext(AppConfig.class);
         Movie movie=context.getBean(Movie.class);
+
         System.out.println(movie);
         System.out.println( "Hello World!" );
     }
